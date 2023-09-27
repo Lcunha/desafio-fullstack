@@ -21,3 +21,6 @@ Repositório para ser usado pelos candidatos à vaga de Desenvolvedor Fullstack 
 - Trabalhar utilizando commits
 - Documentar como executar sua aplicação
 - Descrever as funcionalidades do software
+
+## Gerenciamento de Tarefas:
+- https://trello.com/b/WUMXhdxD/to-do-list-desafio-fullstack-simplly
