@@ -1,5 +1,5 @@
-# Desafio sistema de gerenciamento de tarefas (To-Do List)
-Repositório para ser usado pelos candidatos à vaga de Desenvolvedor Fullstack Liferay da Simplify
+# Simplify To-Do
+Repositório para desenvolvimento do Simplify To-DO. Gereciador de Tarefas cuja finalidade é seer um desafio técnico à vaga de Desenvolvedor Fullstack Liferay da Simplify.
 
 ## Descrição
 - Desenvolva uma aplicação web utilizando uma linguagem de programação e um framework de sua escolha. A aplicação deve consistir em um sistema de gerenciamento de tarefas, onde os usuários podem criar, visualizar, editar e excluir tarefas.
@@ -23,4 +23,36 @@ Repositório para ser usado pelos candidatos à vaga de Desenvolvedor Fullstack 
 - Descrever as funcionalidades do software
 
 ## Gerenciamento de Tarefas:
-- https://trello.com/b/WUMXhdxD/to-do-list-desafio-fullstack-simplly
+- Realizado por Issues.
+
+## Instalação 
+
+### Requisitos
+* Docker 
+* Docker Compose
+
+### Como instalar
+
+1 - Clone o repositório
+
+2 - Entre na pasta do projeto
+
+3 - Rode o comando:
+```
+sudo docker-compose up
+```
+
+4 - Acesse localhost:8003
+
+
+Para acessar o container da aplicação use o seguinte comando:
+```
+sudo docker exec -it desafio-fullstack-web-1 bash
+```
+
+Para ver todos os containers rodando na sua máguina use o seguinte comando:
+
+```
+sudo docker ps
+```
+
