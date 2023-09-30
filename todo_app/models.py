@@ -21,7 +21,7 @@ class ToDoItem(models.Model):
     descricao = models.TextField(null=True, blank=True)
     realizado = models.BooleanField()
     prioridade = models.IntegerField()
-    data_criacao = models.DateTimeField(auto_now_add=True)
+    data_criacao = models.DateField(auto_now_add=True)
     todo_list = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
 
     #Método que retorna o URL do objeto específico 
