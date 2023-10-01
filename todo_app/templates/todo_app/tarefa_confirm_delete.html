@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Deletar Tarefa?</h3>
+
+<p>Você tem certeza que quer deletar a terfa: <b>{{ object.nome }}?</b>
+
+<form method="POST">
+    {% csrf_token %}
+    <input
+        value="Sim"
+        type="submit">
+    <input
+        value="Cancelar"
+        type="button"
+        onclick="location.href='{% url "listar-tarefas" %}';">
+</form>
+
+{% endblock %}
