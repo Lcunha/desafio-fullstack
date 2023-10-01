@@ -2,7 +2,7 @@
 Descubra a solução definitiva para simplificar sua vida. Nosso sistema to-do list oferece uma maneira eficaz de organizar sua rotina, lembrar de suas tarefas e priorizar suas ações, permitindo que você atinja seus objetivos com facilidade e eficiência. Experimente agora e transforme sua produtividade!"
 
 ## Descrição
-Nosso software é uma poderosa aplicação web desenvolvida com Python, Django e JavaScript, projetada para simplificar o gerenciamento de tarefas de forma eficaz e intuitiva. Com uma interface amigável e recursos avançados, oferecemos as seguintes funcionalidades:
+- Nosso software é uma poderosa aplicação web desenvolvida com Python, Django e JavaScript, projetada para simplificar o gerenciamento de tarefas de forma eficaz e intuitiva. Com uma interface amigável e recursos avançados, oferecemos as seguintes funcionalidades:
 
     ### Criação de Tarefas Intuitiva:
     - Os usuários podem criar novas tarefas facilmente, fornecendo detalhes como título, descrição e prioridade.
