@@ -2,23 +2,25 @@
 
 {% block content %}
 
-<h3>{{ titulo }}</h3>
-
-<form method="post">
-    {% csrf_token %}
+<div class="card">
+    <div class="card-header p-3">
+      <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>{{ titulo }}</h5>
+    </div>
+    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px">
+        <form method="post">
+            {% csrf_token %}
     
-    <table>
-        {{ form.as_table }}
-    </table>
-
-    <input value="Cadastrar" type="submit">
-
-    <input value="Cancelar" type="button" onclick="location.href='{% url "index" %}'">
-    
-    {% if object %}
-        <input value="Deletar Tarefa" type="button" onclick="location.href='{% url "tarefa-delete" object.id %}'">
-    {% endif %}
-
-</form>
-
+            <table class="table mb-0">
+                {{ form.as_table }}
+            </table>
+        </form>
+    </div>
+    <div class="card-footer text-end p-3">
+        <input class="btn btn-dark" value="Cadastrar" type="submit">
+        <button class="btn btn-light" onclick="location.href='{% url "index" %}'">Cancelar</button>
+        {% if object %}
+                <input class="btn btn-danger" value="Deletar Tarefa" type="button" onclick="location.href='{% url "tarefa-delete" object.id %}'">
+        {% endif %}
+    </div>   
+</div>
 {% endblock %}

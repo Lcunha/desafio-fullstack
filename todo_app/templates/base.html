@@ -25,17 +25,25 @@
 
 
 <body>
-    <div>
-        <h1 onclick="location.href='{% url "index" %}'">
-            Simplify ToDo List
-        </h1>
-    </div>
+    <section class="vh-100" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-12 col-xl-10">
+                    <h1 onclick="location.href='{% url "index" %}'">
+                        Simplify ToDo List
+                    </h1>
+    
 
     <div>
         {% block content %}
 
         {% endblock %}
     </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 <script

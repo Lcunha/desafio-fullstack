@@ -1,17 +1,10 @@
 {% extends "base.html" %}
-{% block content %}
-
-
-<section class="vh-100" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-12 col-xl-10">
-  
+{% block content %}  
           <div class="card">
             <div class="card-header p-3">
               <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Lista de Tarefas</h5>
             </div>
-            <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+            <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px">
   
               <table class="table mb-0">
                 <thead>
@@ -21,6 +14,7 @@
                     <th scope="col">Descrição</th>
                     <th scope="col">Prioridade</th>
                     <th scope="col">Data de Criação</th>
+                    <th scope="col">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -43,7 +37,7 @@
                       <a href="{% url "tarefa-update" tarefa.id %}" data-mdb-toggle="tooltip" title="Done"><i
                           class="fas fa-edit text-success me-3"></i></a>
                       <a href="{% url "tarefa-delete" tarefa.id %}" data-mdb-toggle="tooltip" title="Remove"><i
-                          class="fas fa-trash-alt text-warning"></i></a>
+                          class="fas fa-trash-alt text-danger"></i></a>
                     </td>
                   </tr>
                   {% empty %}
@@ -54,13 +48,9 @@
   
             </div>
             <div class="card-footer text-end p-3">
-              <button class="btn btn-primary" onclick="location.href='{% url "tarefa-add" %}'">Adicionar Tarefa</button>
+              <button class="btn btn-dark" onclick="location.href='{% url "tarefa-add" %}'">Adicionar Tarefa</button>
             </div>
           </div>
   
-        </div>
-      </div>
-    </div>
-  </section>
 
 {% endblock %}

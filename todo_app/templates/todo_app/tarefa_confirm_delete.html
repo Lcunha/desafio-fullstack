@@ -2,19 +2,19 @@
 
 {% block content %}
 
-<h3>Deletar Tarefa?</h3>
-
-<p>Você tem certeza que quer deletar a terfa: <b>{{ object.nome }}?</b>
-
-<form method="POST">
-    {% csrf_token %}
-    <input
-        value="Sim"
-        type="submit">
-    <input
-        value="Cancelar"
-        type="button"
-        onclick="location.href='{% url "index" %}';">
-</form>
-
+<div class="card">
+    <div class="card-header p-3">
+      <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Deletar Tarefa?</h5>
+    </div>
+    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100px">
+        <p>Você tem certeza que quer deletar a terfa: <b>{{ object.nome }}?</b> </p>
+    </div>
+    <div class="card-footer text-end p-3">   
+        <form method="POST">
+            {% csrf_token %}
+        <input class="btn btn-danger" value="Sim" type="submit">
+        <input class="btn btn-light" value="Cancelar" type="button" onclick="location.href='{% url "index" %}';">
+        </form>
+    </div>     
+</div>
 {% endblock %}
