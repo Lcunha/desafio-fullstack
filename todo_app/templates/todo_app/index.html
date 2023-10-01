@@ -32,7 +32,13 @@
                   <td class="border-0 align-middle">{{ tarefa.nome }}</td>
                   <td class="border-0 align-middle">{{ tarefa.descricao }}</td>
                   <td class="border-0 align-middle">
-                      <h6 class="mb-0"><span class="badge bg-warning">{{ tarefa.prioridade }}</span></h6>
+                    {% if tarefa.prioridade == 1 %}
+                    <h6 class="mb-0"><span class="badge bg-success">Baixa</span></h6>
+                    {% elif tarefa.prioridade == 2 %}
+                    <h6 class="mb-0"><span class="badge bg-warning">Média</span></h6>
+                    {% elif tarefa.prioridade == 3 %}
+                    <h6 class="mb-0"><span class="badge bg-danger">Alta</span></h6>
+                    {% endif %}
                   </td>
                   <td class="border-0 align-middle">{{tarefa.data_criacao | date:"d/m/Y"}}</td>
                   <td class="border-0 align-middle">

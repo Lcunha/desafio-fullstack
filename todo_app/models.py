@@ -8,7 +8,14 @@ class Tarefa(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.TextField(null=True, blank=True, max_length=100)
     realizado = models.BooleanField()
-    prioridade = models.IntegerField()
+
+    PRIORIDADE_CHOICES = (
+        (1, 'Baixa'),
+        (2, 'Média'),
+        (3, 'Alta'),
+    )
+
+    prioridade = models.IntegerField(choices=PRIORIDADE_CHOICES)
     data_criacao = models.DateField(auto_now_add=True)
     ordem = models.PositiveIntegerField(default=1, editable=False)
 
