@@ -1,57 +1,56 @@
 {% extends "base.html" %}
 {% block content %}  
-          <div class="card">
-            <div class="card-header p-3">
-              <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Lista de Tarefas</h5>
-            </div>
-            <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px">
-  
-              <table class="table mb-0">
-                {% csrf_token %}
-                <thead>
-                  <tr>
-                    <th scope="col">Realizado</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Prioridade</th>
-                    <th scope="col">Data de Criação</th>
-                    <th scope="col">Ações</th>
-                  </tr>
-                </thead>
-                <tbody class="sortable">
-                {% for tarefa in object_list %}  
-                  <tr class="fw-normal" data-id="{{ tarefa.id }}">
-                    <th class="border-0 align-middle">
-                        {% if tarefa.realizado %}
-                            <i class="fas fa-circle-check text-success me-3 align-middle"></i>  
-                        {% else %}    
-                            <i class="fas fa-circle-xmark text-danger me-3 align-middle"></i>    
-                        {% endif %}        
-                    </th>
-                    <td class="border-0 align-middle">{{ tarefa.nome }}</td>
-                    <td class="border-0 align-middle">{{ tarefa.descricao }}</td>
-                    <td class="border-0 align-middle">
+<div class="card">
+  <div class="card-header p-3">
+      <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Lista de Tarefas</h5>
+  </div>
+  <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 500px; overflow-y: auto;">
+      <table class="table table-responsive mb-0"> <!-- Adicione a classe "table-responsive" para tornar a tabela responsiva -->
+          {% csrf_token %}
+          <thead>
+              <tr>
+                  <th scope="col">Realizado</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Descrição</th>
+                  <th scope="col">Prioridade</th>
+                  <th scope="col">Data de Criação</th>
+                  <th scope="col">Ações</th>
+              </tr>
+          </thead>
+          <tbody class="sortable">
+              {% for tarefa in object_list %}  
+              <tr class="fw-normal" data-id="{{ tarefa.id }}">
+                  <th class="border-0 align-middle">
+                      {% if tarefa.realizado %}
+                      <i class="fas fa-circle-check text-success me-3 align-middle"></i>  
+                      {% else %}    
+                      <i class="fas fa-circle-xmark text-danger me-3 align-middle"></i>    
+                      {% endif %}        
+                  </th>
+                  <td class="border-0 align-middle">{{ tarefa.nome }}</td>
+                  <td class="border-0 align-middle">{{ tarefa.descricao }}</td>
+                  <td class="border-0 align-middle">
                       <h6 class="mb-0"><span class="badge bg-warning">{{ tarefa.prioridade }}</span></h6>
-                    </td>
-                    <td class="border-0 align-middle">{{tarefa.data_criacao | date:"d/m/Y"}}</td>
-                    <td class="border-0 align-middle">
+                  </td>
+                  <td class="border-0 align-middle">{{tarefa.data_criacao | date:"d/m/Y"}}</td>
+                  <td class="border-0 align-middle">
                       <a href="{% url "tarefa-update" tarefa.id %}" data-mdb-toggle="tooltip" title="Done"><i
-                          class="fas fa-edit text-success me-3"></i></a>
+                              class="fas fa-edit text-success me-3"></i></a>
                       <a href="{% url "tarefa-delete" tarefa.id %}" data-mdb-toggle="tooltip" title="Remove"><i
-                          class="fas fa-trash-alt text-danger"></i></a>
-                    </td>
-                  </tr>
-                  {% empty %}
-                  <p>Não há tarefas cadastradas</p>
-                  {% endfor %}  
-                </tbody>
-              </table>
-  
-            </div>
-            <div class="card-footer text-end p-3">
-              <button class="btn btn-dark" onclick="location.href='{% url "tarefa-add" %}'">Adicionar Tarefa</button>
-            </div>
-          </div>
+                              class="fas fa-trash-alt text-danger"></i></a>
+                  </td>
+              </tr>
+              {% empty %}
+              <p>Não há tarefas cadastradas</p>
+              {% endfor %}  
+          </tbody>
+      </table>
+  </div>
+  <div class="card-footer text-end p-3">
+      <button class="btn btn-dark" onclick="location.href='{% url "tarefa-add" %}'">Adicionar Tarefa</button>
+  </div>
+</div>
+
   
 
 {% endblock %}

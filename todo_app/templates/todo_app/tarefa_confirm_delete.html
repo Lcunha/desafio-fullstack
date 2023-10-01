@@ -4,17 +4,20 @@
 
 <div class="card">
     <div class="card-header p-3">
-      <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Deletar Tarefa?</h5>
+        <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Deletar Tarefa?</h5>
     </div>
-    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 100px">
-        <p>Você tem certeza que quer deletar a terfa: <b>{{ object.nome }}?</b> </p>
+    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 100px; overflow-y: auto;">
+        <p>Você tem certeza que quer deletar a tarefa: <b>{{ object.nome }}?</b></p>
     </div>
-    <div class="card-footer text-end p-3">   
+    <div class="card-footer text-end p-3">
         <form method="POST">
             {% csrf_token %}
-        <input class="btn btn-danger" value="Sim" type="submit">
-        <input class="btn btn-light" value="Cancelar" type="button" onclick="location.href='{% url "index" %}';">
+            <div class="d-flex justify-content-end"> <!-- Use classes flex para alinhar os botões à direita em telas menores -->
+                <input class="btn btn-danger me-2" value="Sim" type="submit">
+                <input class="btn btn-light" value="Cancelar" type="button" onclick="location.href='{% url "index" %}';">
+            </div>
         </form>
-    </div>     
+    </div>
 </div>
+
 {% endblock %}
