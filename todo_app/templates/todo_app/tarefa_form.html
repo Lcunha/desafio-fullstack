@@ -9,12 +9,12 @@
     <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 600px; overflow-y: auto;">
         <form method="post">
             {% csrf_token %}
-            <div class="mb-3"> <!-- Adicione uma margem inferior -->
-                <table class="table table-responsive"> <!-- Adicione a classe "table-responsive" para tornar o formulário responsivo -->
+            <div class="mb-3"> 
+                <table class="table table-responsive"> 
                     {{ form.as_table }}
                 </table>
             </div>
-            <div class="d-flex justify-content-end"> <!-- Use classes flex para alinhar os botões à direita em telas menores -->
+            <div class="d-flex justify-content-end"> 
                 {% if update %}
                 <button class="btn btn-dark" value="Cadastrar" type="submit">Atualizar</button>
                 {% else %}

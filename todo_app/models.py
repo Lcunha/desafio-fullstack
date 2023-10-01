@@ -5,8 +5,8 @@ from django.urls import reverse
 
 
 class Tarefa(models.Model):
-    nome = models.CharField(max_length=100)
-    descricao = models.TextField(null=True, blank=True)
+    nome = models.CharField(max_length=50)
+    descricao = models.TextField(null=True, blank=True, max_length=100)
     realizado = models.BooleanField()
     prioridade = models.IntegerField()
     data_criacao = models.DateField(auto_now_add=True)
