@@ -16,7 +16,7 @@
                         onclick="location.href=
                         '{% url "tarefa-update" todo.id %}'">
                         {{ todo.nome }}
-                        (Due {{ todo.data_criacao | date:"l, F j" }})
+                        ( {{ todo.data_criacao | date:"l, F j" }})
 
                     </div>
                 </div>
