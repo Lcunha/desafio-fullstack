@@ -1,26 +1,29 @@
 # Simplify To-Do
-Repositório para desenvolvimento do Simplify To-DO. Gereciador de Tarefas cuja finalidade é seer um desafio técnico à vaga de Desenvolvedor Fullstack Liferay da Simplify.
+Descubra a solução definitiva para simplificar sua vida. Nosso sistema to-do list oferece uma maneira eficaz de organizar sua rotina, lembrar de suas tarefas e priorizar suas ações, permitindo que você atinja seus objetivos com facilidade e eficiência. Experimente agora e transforme sua produtividade!"
 
 ## Descrição
-- Desenvolva uma aplicação web utilizando uma linguagem de programação e um framework de sua escolha. A aplicação deve consistir em um sistema de gerenciamento de tarefas, onde os usuários podem criar, visualizar, editar e excluir tarefas.
+- Nosso software é uma poderosa aplicação web desenvolvida com Python, Django e JavaScript, projetada para simplificar o gerenciamento de tarefas de forma eficaz e intuitiva. Com uma interface amigável e recursos avançados, oferecemos as seguintes funcionalidades:
 
-## Requisitos
-- Usar banco de dados relacional
-- Campos mínimos da entidade de tarefa
-    - Nome
-    - Descrição
-    - Realizado
-    - Prioridade
-    - Data de criação
-- Criar CRUD de tarefas
-- Deve ser possível mudar a ordem das tarefas por meio de _drag and drop_
-- (Opcional) Desenvolver aplicação dentro de um container Docker ou hospedar ela publicamente
+    ### Criação de Tarefas Intuitiva:
+    - Os usuários podem criar novas tarefas facilmente, fornecendo detalhes como título, descrição, data de vencimento e prioridade.
 
-## Instruções
-- Fazer um fork do repositório para sua conta pessoal do git
-- Trabalhar utilizando commits
-- Documentar como executar sua aplicação
-- Descrever as funcionalidades do software
+    ### Edição e Atualização Flexíveis: 
+    - Os usuários têm total controle sobre suas tarefas e podem editar informações, como datas de vencimento, prioridades e descrições, com facilidade.
+
+    ### Exclusão Segura de Tarefas: 
+    - Para manter o ambiente organizado, é possível excluir tarefas que não são mais necessárias, com a opção de restauração caso uma exclusão seja acidental.
+
+    ### Reordenação por Drag and Drop: 
+    - Uma característica marcante é a capacidade de reorganizar as tarefas de forma intuitiva e rápida, simplesmente arrastando e soltando-as na ordem desejada.
+
+## Tecnologias Utilizadas
+    - Python
+    - Django 
+    - Sqllite
+    - JQuery
+    - Webkit MDB
+    - HTML
+    - CSS
 
 ## Gerenciamento de Tarefas:
 - Realizado por Issues.
