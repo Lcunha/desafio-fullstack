@@ -10,6 +10,18 @@ class Tarefa(models.Model):
     realizado = models.BooleanField()
     prioridade = models.IntegerField()
     data_criacao = models.DateField(auto_now_add=True)
+    ordem = models.PositiveIntegerField(default=1, editable=False)
+
+    def save(self, *args, **kwargs):
+        # Verificando se a tarefa é nova (ainda não tem uma ordem atribuída)
+        if not self.ordem:
+            # Encontrando a ordem máxima atual e adicione 1
+            max_ordem = Tarefa.objects.aggregate(models.Max('ordem'))['ordem__max']
+            if max_ordem is not None:
+                self.ordem = max_ordem + 1
+            else:
+                self.ordem = 1
+        super(Tarefa, self).save(*args, **kwargs)
 
     #Método que retorna o URL do objeto específico 
     def get_absolute_url(self):
@@ -23,6 +35,6 @@ class Tarefa(models.Model):
     
     #Definindo a ordem do retorno das tarefas
     class Meta:
-        ordering = ["prioridade"]
+        ordering = ["ordem"]
 
 
