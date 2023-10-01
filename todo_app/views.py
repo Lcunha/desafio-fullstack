@@ -1,8 +1,17 @@
+rom typing import Any
 from django.shortcuts import render
-from django.views.generic import ListView
-from .models import ToDoList
+from django.urls import reverse, reverse_lazy
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    )
+from .models import Tarefa
 
-class ListListView(ListView):
-    model = ToDoList
+class ListarTarefasView(ListView):
+    model = Tarefa
     template_name = "todo_app/index.html"
+    
+
 

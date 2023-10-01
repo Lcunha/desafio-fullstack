@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+    <div>
+        <div>
+            <h3>Tarefas</h3>
+        </div>
+
+        <ul>
+            {% for todo in object_list %}
+            <li>
+                <div>
+                    <div
+                        role="button"
+                        onclick="location.href=
+                        '{% url "tarefa-update" todo.id %}'">
+                        {{ todo.nome }}
+                        (Due {{ todo.data_criacao | date:"l, F j" }})
+
+                    </div>
+                </div>
+            </li>
+            {% empty %}
+            <p>Não há tarefas cadastradas</p>
+            {% endfor %}
+        </ul>
+        <p>
+            <input
+
+                value="Adicionar Tarefa"
+
+                type="button"
+
+                onclick="location.href='{% url "tarefa-add" %}'" />
+        </p>
+    </div>
+</div>
+
+{% endblock %}
