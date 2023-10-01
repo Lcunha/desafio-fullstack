@@ -8,6 +8,19 @@ from django.views.generic import (
     DeleteView,
     )
 from .models import Tarefa
+from django.http import JsonResponse
+
+def reordenar_tarefas(request):
+    if request.method == 'POST':
+        nova_ordem = request.POST.getlist('tarefa[]')
+
+    for posicao, tarefa_id in enumerate(nova_ordem, start=1):
+        tarefa = Tarefa.objects.get(pk=tarefa_id)
+        tarefa.ordem = posicao
+        tarefa.save()
+
+    return JsonResponse({'message': 'Ordem atualizada com sucesso'})
+
 
 class ListarTarefasView(ListView):
     model = Tarefa
