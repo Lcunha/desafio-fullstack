@@ -13,14 +13,20 @@
             <table class="table mb-0">
                 {{ form.as_table }}
             </table>
-        </form>
+        
     </div>
     <div class="card-footer text-end p-3">
-        <input class="btn btn-dark" value="Cadastrar" type="submit">
-        <button class="btn btn-light" onclick="location.href='{% url "index" %}'">Cancelar</button>
+        {% if update %}
+        <button class="btn btn-dark" value="Cadastrar" type="submit">Atualizar</button>
+        {% else %}
+        <button class="btn btn-dark" value="Cadastrar" type="submit">Cadastrar</button>
+        {% endif %}
         {% if object %}
                 <input class="btn btn-danger" value="Deletar Tarefa" type="button" onclick="location.href='{% url "tarefa-delete" object.id %}'">
         {% endif %}
+        <input class="btn btn-light" value="Cancelar" type="button" onclick="location.href='{% url "index" %}'">
+        
+    </form>
     </div>   
 </div>
 {% endblock %}
