@@ -26,15 +26,19 @@
                 <tbody>
                 {% for tarefa in object_list %}  
                   <tr class="fw-normal">
-                    <th class="border-0">
-                      <span class="ms-2">{{ tarefa.realizado }}</span>
+                    <th class="border-0 align-middle">
+                        {% if tarefa.realizado %}
+                            <i class="fas fa-circle-check text-success me-3 align-middle"></i>  
+                        {% else %}    
+                            <i class="fas fa-circle-xmark text-danger me-3 align-middle"></i>    
+                        {% endif %}        
                     </th>
                     <td class="border-0 align-middle">{{ tarefa.nome }}</td>
                     <td class="border-0 align-middle">{{ tarefa.descricao }}</td>
                     <td class="border-0 align-middle">
                       <h6 class="mb-0"><span class="badge bg-warning">{{ tarefa.prioridade }}</span></h6>
                     </td>
-                    <td class="border-0 align-middle">{{tarefa.data_criacao | date:"j, F" }}</td>
+                    <td class="border-0 align-middle">{{tarefa.data_criacao | date:"d/m/Y"}}</td>
                     <td class="border-0 align-middle">
                       <a href="{% url "tarefa-update" tarefa.id %}" data-mdb-toggle="tooltip" title="Done"><i
                           class="fas fa-edit text-success me-3"></i></a>
