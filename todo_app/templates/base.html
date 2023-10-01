@@ -50,4 +50,38 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
 ></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+    $(function() {
+        $(".sortable").sortable({
+            update: function(event, ui) {
+                // Obter a ordem atualizada diretamente dos elementos HTML
+                var novaOrdem = $(this).find("tr").map(function() {
+                    return $(this).data("id");
+                }).get();
+
+                // Enviando uma solicitação AJAX para a função de visualização do Django para atualizar a ordem no BD
+                $.ajax({
+                    url: '{% url "reordenar_tarefas" %}',
+                    type: 'POST',
+                    headers: { "X-CSRFToken": csrfToken },
+                    data: { 'tarefa[]': novaOrdem },
+                    success: function(data) {
+                        // Recebendo retorno
+                        console.log(data.message);
+                    },
+                    error: function(xhr, textStatus, error) {
+                        // Erros
+                        console.error(xhr.responseText);
+                    }
+                });
+            }
+        });
+        $(".sortable").disableSelection();
+    });
+</script>
+  
 </html>

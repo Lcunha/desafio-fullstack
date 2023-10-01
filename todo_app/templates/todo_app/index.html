@@ -7,6 +7,7 @@
             <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px">
   
               <table class="table mb-0">
+                {% csrf_token %}
                 <thead>
                   <tr>
                     <th scope="col">Realizado</th>
@@ -17,9 +18,9 @@
                     <th scope="col">Ações</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="sortable">
                 {% for tarefa in object_list %}  
-                  <tr class="fw-normal">
+                  <tr class="fw-normal" data-id="{{ tarefa.id }}">
                     <th class="border-0 align-middle">
                         {% if tarefa.realizado %}
                             <i class="fas fa-circle-check text-success me-3 align-middle"></i>  
